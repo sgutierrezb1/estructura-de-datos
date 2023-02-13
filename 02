@@ -1,0 +1,73 @@
+#include <iostream>
+
+using namespace std;
+void comundenominador();
+void menor();
+int Combinatoriasimple();
+
+int main()
+{
+    int opcion;
+    do{
+       cout<<"menu/n";
+       cout<<"1.- Sacar el comun denominador/n";
+       cout<<"2.- Numero menor/n";
+       cout<<"3.- Combinatoriasimple/n";
+       cout<<"0.Salir/n";
+       cout<<"Opcion:";
+       cin>> opcion;
+       switch(opcion)
+       {
+        case 1:
+         comundenominador();
+         break;
+        case 2:
+         menor();
+         break;
+        case 3:
+          cout<<"Combinatoriasimple";
+          break;
+        
+    }
+    
+
+    return 0;
+}
+void comundenominador();
+{
+    int a,b,c;
+        while (a!=b)
+        {
+            if(a>b)
+            {
+            a=a-b;
+            }
+            else
+             {
+             b=b-a;
+            }
+            return a;
+        }
+            }
+int Combinatoriasimple();
+{
+    int FACT(int n)
+    { int f, i;
+       f=1;
+      for(i=1;1<=n;i++)
+      {
+          f=f*i;
+      }
+      return f;
+      
+    }
+    {
+        cout<<"valor de m: "; 
+    }
+    
+    
+      
+      }
+      
+}
+        
