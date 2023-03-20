@@ -1,0 +1,22 @@
+# escribir un programa que diga si es mayor o menor
+edad=float(input("ingrese edad:"))
+if edad>=18:
+    print("mayor de edad")
+else
+  print("menor de edad")
+
+# escribir un programa que pida dos numeros y muestre su division, si es cero, error
+n=float(input("ingrese dividendo"))
+m=float(input("ingrese divisor"))
+if m==0:
+    resultado=n/m
+    print("error, no puede ser 0")
+else:
+    print(str(resultado))
+    
+    
+
+# escribir un programa que pregunte al usuario su edad y muestre por pantalla todos los años que ha cumplido(desde 1 hasta su edad).
+n=int(input("ingrese edad"))
+for i in range(1, n+1):
+    print (i, end=",")
