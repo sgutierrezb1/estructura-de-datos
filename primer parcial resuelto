@@ -1,0 +1,185 @@
+Sofia Gutierrez Baron								23/03/23
+2022110161
+Estructura de Datos	
+Primer Parcial							
+
+4).Realizar un programa que utilice funciones para cada opcion y un menu que tenga la opcion 0 salir, y que verifique que no se ingresen valores arados para las siguientes opciones:
+Calcular la potencia de un número con recursividad 
+Mostrar una serie de los números impares empezando de 3
+Mover los elementos de un string a un vector
+
+#include <iostream>
+#include <string>
+#include <vector>
+ 
+using namespace std;
+#define FIL 20
+#define COL 20
+#define vec [10]
+ 
+int potencia(int n , int p);
+int serie(int num);
+vector <string> vec; 
+ 
+int main()
+{
+  int opcion,n,p,num,m,factorial;
+  cout<<"*****MENU*****"<<endl;
+  cout<<"Elija una opcion:"<<endl;
+  cout<<"1. Calcular la potencica de un numero"<<endl;
+  cout<<"2. Mostrar la serie de los numeros impares"<<endl;
+  cout<<"3. Mover los elemenros de un string a un vector"<<endl;
+  cout<<"0. Salir"<<endl;
+  cin>>opcion;
+  do{
+  switch(opcion)
+  {
+      case1: 
+          cout<<"La potencia del numero es:"<<potencia(n,p);
+          break;
+      
+      case2: 
+          cout<<"La serie de numeros es:"<<serie(num);
+          break;
+      
+      case3:
+          cout<<"Los elementos del vector seran:"<<vector(string m);
+          break;
+      
+      case0: cout<<"Salir"<<endl;
+      default: cout<<"No existe esa opcion"<<endl;
+      break;
+  }
+} while(opcion!=0);
+  system("pause");
+  system("cls");
+}
+int potencia(int n , int p)
+{
+            if (n == 0)
+            {
+                        return 1;
+            }
+            else
+            {
+                        return n * factorial(n - 1);
+            }
+}
+int serie(num);
+ 
+{
+            int p;
+            cout << "Ingrese la serie: " << endl;
+            cin >> p;
+            for (int i = 4; i <= p; i += 2)
+            {
+                        cout << i<<" , ";
+            }
+            cout << endl;
+}
+ 
+vector <string> vec;
+{
+            int n = p.length();
+            for (int i = 0; i < n; i++)
+            {
+                        vector[i] = p[i];
+            }
+}
+ 
+
+
+2) Crear una función para transformar una matriz haciendo que a cada elemento de la matriz se le reste una constante que debe ser declarada como tal y que puede ser declarada global.
+#include <iostream>
+#include "conio.h"
+ 
+#define FIL 10
+#define COL 10
+ 
+using namespace std;
+ 
+void MatrizTrasp(double matriz1[FIL][COL], double matriz2[FIL][COL]);
+void mostrarMatriz(double matriz1[FIL][COL], int filas, int columnas);
+void cargarMatriz(double matriz1[FIL][COL], int filas, int columnas);
+ 
+int filas1, columnas1;
+ 
+int main(){
+            
+            double matriz1[FIL][COL], matriz2[FIL][COL];
+            
+            cout << "Ingrese el numero de filas de la matriz: "; cin >> filas1;
+            cout << "Ingrese el numero de columnas de la matriz: "; cin >> columnas1;
+ 
+            cargarMatriz(matriz1, filas1, columnas1);
+            MatrizTrasp(matriz1, matriz2);
+            mostrarMatriz(matriz2, filas1, columnas1);
+ 
+            return 0;
+}
+ 
+void MatrizTrasp(double matriz1[FIL][COL], double matriz2[FIL][COL]) {
+ 
+            for(int i=0; i<filas1; i++)
+                        for (int j = 0; j < columnas1; j++) {
+ 
+                                    matriz2[i][j] = matriz1[j][i];
+                        }
+ 
+}
+ 
+void mostrarMatriz(double matriz1[FIL][COL], int filas, int columnas) {
+ 
+    cout<<"La matriz transpuesta es: "<<endl;
+            for (int i = 0; i < filas; i++) {
+                        for (int j = 0; j < columnas; j++) {
+            cout << "[" << matriz1[i][j] << "]";
+                        }
+                        cout << " " << endl;
+            
+            }
+}
+ 
+void cargarMatriz(double matriz1[FIL][COL], int filas, int columnas) {
+            
+ 
+            for (int i = 0; i < filas; i++) {
+                        for (int j = 0; j < columnas; j++) {
+ 
+                                    cout << "[" << i << "][" << j << "]: ";
+                                    cin >> matriz1[i][j];
+                        }
+            }
+ 
+}
+ 
+
+
+3. Crear una función que recibe como parámetros un vector y una matriz pasar los elementos de la matriz al vector de manera clasificada en forma descendente. Validar que los elementos de la matriz no excedan los del vector.
+#include <iostream>
+#include <vector>
+#include <algorithm>
+ 
+void clasificar_descendente(std::vector<int>& v, std::vector<std::vector<int>>& m) {
+    // Obtener el número total de elementos de la matriz
+    int total_elem = 0;
+    for (const auto& fila : m) {
+        total_elem += fila.size();
+    }
+ 
+    // Verificar que no haya más elementos en la matriz que en el vector
+    if (total_elem > v.size()) {
+        std::cout << "Error: los elementos de la matriz exceden los del vector" << std::endl;
+        return;
+    }
+ 
+    // Copiar los elementos de la matriz al vector
+    for (const auto& fila : m) {
+        for (const auto& elem : fila) {
+            v.push_back(elem);
+        }
+    }
+ 
+    // Ordenar el vector en forma descendente
+    std::sort(v.begin(), v.end(), std::greater<int>());
+}
