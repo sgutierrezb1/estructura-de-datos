@@ -1,0 +1,112 @@
+Encolar - Sebastian / Letizia
+void encolar(Dato dato) {
+       Nodo nuevo; // New
+       if vacio()
+
+
+void Cola::Encolar(Dato elemento) // Letizia 
+  {
+        Nodo* newNodo = new Nodo (); // Crear un nuevo nodo. 
+        newNodo->dato = elemento; //Asigna un elemento al dato. 
+        newNodo->sig = NULL; //Asigna el valor NULL al nuevo Nodo. 
+
+        if (final == NULL) { // Si es igual NULL se queda ahí. Está vacía y es el único nodo.
+            frente = final = newNodo;
+        }
+            else {  // Se crea un ciclo. Se debe colocar al final de la cola. 
+                final->sig = newNodo;
+                final = newNodo;
+            }
+tamaño++; // Siga aumentando 
+}
+    
+
+
+
+
+
+    	if (Llena()) {
+        	cout << "la cola está llena." << endl;
+        	return;
+    	}
+    	else if (Vacia()) {
+        	frente = 0;
+        	final = 0;
+    	}
+    	else {
+        	final = (final + 1) % MAX_SIZE;
+    	}
+ 
+        elementos[final] = elemento;
+    	cout << "Elemento " << elemento << " encolado." << endl;
+	}
+
+Desencolar - Camacho // Alvaro
+
+
+bool  cola :: Vacio()          //Vacio - Leandro
+{
+if(frente==NULL)
+{
+	return true;   
+}
+else
+{
+	return false;  
+}
+}
+//////////////////////////////////////////////////////////////////////////
+void Cola::Desencolar()
+{
+	if (Vacio())
+	{
+		return true;
+	}
+	else
+	{
+		Nodo* aux = frente;///se crea auxiliar para el frente
+		frente = frente->sig;///cambia el frente
+		int nuevo = aux->dato;///
+		delete (aux);
+		tamano--;
+		return nuevo;
+	}
+}
+}
+
+
+
+
+
+
+Mostrar - Mauro
+
+
+void Cola::mostrarDatos() {
+
+	do {
+		cout << frente << " ";
+		frente = frente->sig;
+
+	} while (frente->sig != NULL);
+}
+
+
+
+
+
+
+    	cout << "la cola está vacía: " << endl;
+    	return;
+	}
+	else if (principio == final) {
+    	principio = -1;
+    	final = -1;
+	}
+	else {
+    	principio = (principio + 1) % MAX_SIZE;
+	}
+           cout << "Elemento desencolado ." << endl; }
+Lleno - Nahemi  - Sofia
+
+
